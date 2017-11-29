@@ -1,0 +1,25 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage ('clone')
+          checkout SCM
+          }
+        stage('Build') { 
+            steps { 
+                sh 'echo steps to build' 
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'echo tests run successfully'
+             
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'scripts deployed'
+            }
+        }
+    }
+}
