@@ -2,11 +2,6 @@ pipeline {
     agent any 
 
     stages {
-        stage('Declarative checkout SCM') { 
-            steps { 
-                sh 'ls' 
-            }
-        }
         stage('Checkout Stage'){
             steps {
                 sh 'pwd'
