@@ -1,12 +1,15 @@
-enkinsfile (Declarative Pipeline)
 pipeline {
-    agent any
-    stages {
-        stage('example') {
-            steps {
-                echo 'Hello World'
-            }
-        }
+     agent any
+     stages {
+     stage('build') {
+        steps {
+	   echo 'building'
+	   }
+          }
+     stage('test') {
+        steps {
+	   echo 'testing'
+	   }
+	  }
+	}
     }
-}
-
