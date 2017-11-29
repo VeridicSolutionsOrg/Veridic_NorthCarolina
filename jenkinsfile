@@ -1,23 +1,31 @@
 pipeline {
-    agent { label 'master' }
-    stages {
-       stage('test') {
-        post {
-            always {
-              sh 'This will always run'
+    agent any
+        stages {
+            stage('Build') {
+                when {
+                    expression {
+                        "foo" == "bar"
+                    }
+                }
+                steps {
+                    echo 'Building'
+                }
             }
-            failure {
-              sh 'This will run only if failed'
+        stage('Test') {
+            when {
+                environment name: 'JOB_NAME', value: 'foo'
             }
-            changed {
-              sh 'This will run only if the state of the Pipeline has changed')
+            steps {
+                echo 'Testing'
             }
-         }
-
-         steps {
-             sh 'fail me please'
-         }
-       }
+        }
+        stage('Deploy') {
+            when {
+                branch 'master'
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
     }
-
 }
