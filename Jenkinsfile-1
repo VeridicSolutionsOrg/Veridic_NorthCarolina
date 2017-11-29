@@ -8,6 +8,7 @@ pipeline {
                  writeFile file:'dummy', text:''
                  }
                 }
+               }
                 stage('Test') {
                  steps {
                   sh 'ls -l'
