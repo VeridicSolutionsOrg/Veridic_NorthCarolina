@@ -1,13 +1,11 @@
-node('ec2slave')
-{
-agent any
+pipeline
+{agent any
 
 stages
 {
 	stage('test')
-	{  steps{sh 'echo "this node is working"'  }  }
+	{  steps{echo "this node is working"  }  }
 
 }
-
-
 }
+
