@@ -1,34 +1,13 @@
-node('aws_slave')
+node('ec2slave')
 {
- agent any
+agent any
 
 stages
 {
-	stage('check')
-	{ steps{ sh 'hostname'
-		 sh 'echo "this is the slave node"'	}
-	}
-	
-	stage('task')
-        { steps { sh 'sudo yum install -y git'
-	
-	}	
-	}
-}
-}
-
-
-
-
-
-
+	stage('test')
+	{  steps{sh 'echo "this node is working"'  }  }
 
 }
-
-
-
-
-
 
 
 }
