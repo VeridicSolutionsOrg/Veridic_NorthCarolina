@@ -1,16 +1,16 @@
-node('aws_slave')
+node()
 {
  agent any
 
 stages
 {
-        stage('check')
-        { steps{ sh 'hostname'
-                 sh 'echo "this is the slave node"'     }
+        stage('clone')
+        { checkout scm
+    
         }
 
         stage('task')
-        { steps { sh 'sudo yum install -y git'
+        { steps { sh 'echo task completed'
 
         }
         }
