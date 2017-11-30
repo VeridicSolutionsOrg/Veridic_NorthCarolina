@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-                echo 'make' 
+                sh 'make' 
             }
         }
         stage('Test'){
             steps {
-                echo 'make check'
+                sh 'make check'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'make publish'
+                sh 'make publish'
             }
         }
     }
