@@ -5,7 +5,7 @@ agent {node {label 'awsslave'}}
 stages
 {
 		stage('node check')
-		{	steps { sh echo 'this is the slave node'}
+		{	steps { sh 'echo "this is the slave node"'}
 		}
 
 		stage('git remove')
