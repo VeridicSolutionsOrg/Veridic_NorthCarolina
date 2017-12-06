@@ -14,7 +14,7 @@ pipeline {
                 sh 'pwd' 
             }
         }
-        stage('starting database rebuild') {
+        stage('starting database Rebuild') {
             steps {
                 sh 'ls'
             }
