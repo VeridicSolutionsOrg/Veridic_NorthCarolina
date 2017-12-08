@@ -1,20 +1,21 @@
+#!/usr/bin/env groovy
 pipeline {
     agent any 
 
     stages {
         stage('Checkout Stage1'){
             steps {
-                sh 'pwd'
+                echo 'pwd'
             }
         }
         stage('Build Stage') {
             steps {
-                sh 'cd /etc'
+                echo 'cd /etc'
             }
         }
         stage('Starting database rebuild'){
             steps {
-                 sh 'pwd'
+                 echo 'pwd'
             }
         }
     }
